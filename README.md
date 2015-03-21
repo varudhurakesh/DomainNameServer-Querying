@@ -42,19 +42,29 @@ Top 10 domains to query:
 
 Solution:
 ========
+
 # DomainNameServer-Querying
 
 This application will run DNS queries to top 10 alexa websites (predefined list) in configurable time intervals and iterations
 
 I. Softwares to be installed:
+
 Ubuntu 14.04 LTS version is used
+
 sudo apt-get install mySQL-server
+
 sudo apt-get install libmysqlclient15-dev
+
 sudo apt-get install libmysqlc++-dev
+
 sudo apt-get install libmysql++
+
 sudo apt-get install libmysql++-dev
+
 sudo apt-get install gcc
+
 sudo apt-get install g++
+
 
 II. My SQL commands:
 
@@ -99,6 +109,7 @@ g++ -o test dns_application.cpp -L/usr/include/mysql -lmysqlclient -I/usr/includ
 2)
 
 Different options to run the application are as below:
+
 -d <mysql database>
 
  -u <mysql user>
@@ -137,27 +148,13 @@ Eg:
 IV. Verifying the results:
 
 To check results:
+
 select * from queries_result;
 
-An example of the result looks like below:
 
 mysql> select * from queries_result;
 
-+----------------------+---------------+-------------------+-----------------+-----------------------+------------------+-----------------------------+------------------------------+
-| name                  | avg_in_ms | stddev_in_ms | sum_in_ms  | sum_sqrt_in_ms | num_queries |         first_ts                |     last_ts                      |     
-+---------------------+----------------+-------------------+------------------+-----------------------+-----------------+-----------------------     -+-------------------------------+
-| baidu.com         |   115.173    |      549.065      |      9329        |       25493719     |          81         | 2015-03-21 06:08:39 | 2015-03-21 06:22:49 |
-| blogger.com      |   143.395    |      547.875      |     11615       |       25979047     |          81         | 2015-03-21 06:08:39 | 2015-03-21 06:22:49 |
-| facebook.com   |   66.4938    |      33.3404      |      5386        |         448174       |          81         | 2015-03-21 06:08:39 | 2015-03-21 06:22:49 |
-| google.com       |   60.1481    |      31.9958     |      4872        |         375964       |          81         | 2015-03-21 06:08:39 | 2015-03-21 06:22:49 |
-| live.com            |    117.79     |      550.389     |      9541        |       25660995      |          81         | 2015-03-21 06:08:39 | 2015-03-21 06:22:49 |
-| msn.com           |   75.6049    |      32.4843     |      6124       |         548478        |          81         | 2015-03-21 06:08:39 | 2015-03-21 06:22:49 |
-| qq.com              |   623.704    |      890.518    |     50520       |       95744340      |          81         | 2015-03-21 06:08:39 | 2015-03-21 06:22:50 |
-| wikipedia.org    |   87.8642    |      34.9694    |       7117        |         724381        |          81         | 2015-03-21 06:08:39 | 2015-03-21 06:22:49 |
-| yahoo.com       |        94        |      34.7787    |      7614         |         813690        |          81          | 2015-03-21 06:08:39 | 2015-03-21 06:22:50 |
-| youtube.com    |   72.1358    |       32.736     |      5843         |         508293        |          81          | 2015-03-21 06:08:39 | 2015-03-21 06:22:49 |
-+---------------+-----------+--------------+-----------+----------------+-------------+---------------------+---------------------+
-10 rows in set (0.00 sec)
+
 
 
 V. Remove the tables after finishing with the running of the application
